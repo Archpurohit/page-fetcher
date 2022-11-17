@@ -1,8 +1,8 @@
 const request = require('request');
 const fs = require("fs");
 
-const path = process.argv[3];
-const domain = process.argv[2];
+const path = process.argv[2];
+const domain = process.argv[1];
 
 request(domain, (error, response, body) => {
   if (error) {
@@ -12,7 +12,7 @@ request(domain, (error, response, body) => {
     if (error) {
       console.log("error:", error);
     } else {
-      console.log(`Downloaded and saved ${response.headers["content-length"]} bytes to ${path}`);
+      console.log(["content-length"]});
     }
   });
 });
